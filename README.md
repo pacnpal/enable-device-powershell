@@ -19,7 +19,7 @@ Register-ScheduledTask -Xml (Get-Content "EnableDeviceAtBoot.xml" -Raw) -TaskNam
 
 # Purpose
 
-I created this script to help me with a persistent AMD GPU issue I was having on a Proxmox VM, which started up in a state where it needed to be enabled before use. I created a task to run in Task Scheduler to run at boot to resolve this. The Task Scheduler XML is provided for this purpose. 
+I created this script to help me with a persistent AMD GPU issue I was having on a Proxmox VM, which started up in a state where the GPU device needed to be enabled before use. I created a task to run in Task Scheduler to run at boot to resolve this. The Task Scheduler XML is provided for this purpose. 
 
 # LICENSE
 
