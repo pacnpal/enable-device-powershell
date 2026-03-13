@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Description>Enables a device by friendly name after boot. Edit the Arguments below to set your device name.</Description>
+    <URI>\EnableDeviceAtBoot</URI>
+  </RegistrationInfo>
+  <Triggers>
+    <BootTrigger>
+      <Enabled>true</Enabled>
+    </BootTrigger>
+  </Triggers>
+  <Principals>
+    <Principal id="Author">
+      <UserId>S-1-5-18</UserId>
+      <RunLevel>HighestAvailable</RunLevel>
+    </Principal>
+  </Principals>
+  <Settings>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+    <AllowHardTerminate>true</AllowHardTerminate>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <RunOnlyIfNetworkAvailable>false</RunOnlyIfNetworkAvailable>
+    <AllowStartOnDemand>true</AllowStartOnDemand>
+    <Enabled>true</Enabled>
+    <Hidden>false</Hidden>
+    <RunOnlyIfIdle>false</RunOnlyIfIdle>
+    <ExecutionTimeLimit>PT5M</ExecutionTimeLimit>
+    <Priority>7</Priority>
+  </Settings>
+  <Actions Context="Author">
+    <Exec>
+      <Command>powershell.exe</Command>
+      <!-- ============================================================
+           EDIT THIS LINE: Replace YOUR DEVICE NAME HERE with the
+           friendly name from Device Manager. Wildcards OK.
+           
+           Examples:
+             -DeviceName "Intel(R) Wi-Fi 6 AX201 160MHz"
+             -DeviceName "Realtek*Ethernet*"
+           ============================================================ -->
+      <Arguments>-NoProfile -ExecutionPolicy Bypass -File "C:\Scripts\Enable-Device.ps1" -DeviceName "YOUR DEVICE NAME HERE"</Arguments>
+    </Exec>
+  </Actions>
+</Task>
