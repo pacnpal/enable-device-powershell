@@ -23,4 +23,4 @@ I created this script to help me with a persistent AMD GPU issue I was having on
 
 # LICENSE
 
-Please refer to [LICENSE] (LICENSE).
+Please refer to [LICENSE](LICENSE).
